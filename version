@@ -1,0 +1,11 @@
+# Usage version <version_number>
+
+VERSION="$1"
+
+git add . --all
+
+git commit -m"$(date +%Y%m%d)"
+
+git tag -a v$1  -m "tag version $1"
+
+git push origin master v$1

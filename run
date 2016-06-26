@@ -1,0 +1,8 @@
+#docker run  -v /alfresco_data:/alfresco/alf_data --name='alfresco' -tdi  -p 3080:8080 -e 'DB_NAME=alfresco' -e 'DB_PASSWORD=oot7ya2A' -e 'DB_USERNAME=alfresco' -e 'DB_HOST=172.17.0.1' bvuser/alfresco 
+docker run  -v /alfresco_data:/alfresco/alf_data --name='alfresco' -tdi  -p 3080:8080 -e 'DB_NAME=alfresco' -e 'DB_PASSWORD=DajT6h3' -e 'DB_USERNAME=alfresco' -e 'DB_HOST=10.0.2.132' -e 'DB_PORT=5435' bvuser/alfresco 
+
+#docker run  -v /alfresco_data:/alfresco/alf_data --name='alfresco' -tdi  -p 3080:8080  bvuser/alfresco 
+#-e 'DB_HOST=172.17.0.1' \
+#-e 'DB_USERNAME=alfresco' \
+#-e 'DB_PASSWORD=oot7ya2A' \
+#-e 'DB_NAME=alfresco' 
