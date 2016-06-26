@@ -25,6 +25,7 @@ COPY assets/install_java.sh /tmp/install_java.sh
 RUN chmod 755 /tmp/install_java.sh
 RUN /tmp/install_java.sh
 
+
 # install alfresco
 COPY assets/install_alfresco.sh /tmp/install_alfresco.sh
 RUN chmod 755 /tmp/install_alfresco.sh
