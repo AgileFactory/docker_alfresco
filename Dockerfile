@@ -25,6 +25,7 @@ COPY assets/install_java.sh /tmp/install_java.sh
 RUN chmod 755 /tmp/install_java.sh
 RUN /tmp/install_java.sh
 
+
 # install alfresco
 COPY assets/install_alfresco.sh /tmp/install_alfresco.sh
 RUN chmod 755 /tmp/install_alfresco.sh
@@ -52,13 +53,7 @@ RUN chown -R tomcat:tomcat /appli
 RUN yum clean all
 RUN yum install passwd -y
 
-# creation user deployer
 
-RUN useradd -d /home/deployer -m deployer && mkdir /home/deployer/.ssh
-RUN echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLPqBcb8x/L03D0+FuJSwxXAuqmAeGzKdfNnezN24NZvP+b2s3m79kiUaN0HjDtPSNQqR9sgX8SMhNevaK/j9+qo1Zq3jSGax8czTEaZdNbcu+gfXTbek4YSnle6LR/5poELV5NA4auNfpYpnZ8mC7OwWXaisKkJ19YQDb4TUKQ7W1ThIsgKqu6/8fQd3+UZES0aprTumggvBhA6OXy3xuFqwF42lPD62q1F+PcbSGaAh6OUG2627KHipkRy0swtVVH+LTFutinxGNULt9V1uyuwBqlBBIfBH8S++8ZJAAT+zUPScLvbLJGJnmMx2QL5t3djSAhcQSekhYbkbypis3 deployer-key" > /home/deployer/.ssh/authorized_keys
-RUN chown deployer: /home/deployer/.ssh/authorized_keys
-RUN chmod 600 /home/deployer/.ssh/authorized_keys
-RUN echo "deployer ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/90-cloud-init-users
 
 EXPOSE 22 21 137 138 139 445 7070 8080
 WORKDIR /alfresco
